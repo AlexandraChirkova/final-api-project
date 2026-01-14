@@ -37,4 +37,19 @@ public class BookApi {
                 .spec(responseSpec(201))
                 .extract().response();
     }
+
+    public static void deleteBook(String isbn) {
+        given()
+                .spec(requestSpecAuth(AuthData.token))
+                .body(
+                        java.util.Map.of(
+                                "userId", AuthData.userId,
+                                "isbn", isbn
+                        )
+                )
+                .when()
+                .delete("/BookStore/v1/Book")
+                .then()
+                .statusCode(204);
+    }
 }
