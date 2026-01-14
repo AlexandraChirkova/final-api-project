@@ -1,0 +1,21 @@
+{
+  "base": {
+    "logo": "",
+    "project": "Telegram Bot",
+    "environment": " qa guru",
+    "comment": "some comment",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "build/reports/allure-report/allureReport/",
+    "enableChart": true,
+    "enableSuitesPublishing": true,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "8080974182:AAF4ggwAvC7t3-CmJzksX7YeFTVA7ZKGz_o",
+    "chat": "-5060335139",
+    "topic": "",
+    "replyTo": "",
+    "templatePath": "/templates/telegram.ftl"
+  }
+}
