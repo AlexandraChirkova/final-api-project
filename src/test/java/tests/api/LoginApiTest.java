@@ -1,6 +1,7 @@
 package tests.api;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.Description;
 import models.LoginResponse;
 import models.UserCredentials;
 import org.junit.jupiter.api.DisplayName;
@@ -14,6 +15,7 @@ import static specs.Specs.responseSpec;
 public class LoginApiTest extends BaseApiTest{
 
     @Test
+    @Description("Отправляем POST запрос на логин")
     @DisplayName("Успешный логин пользователя")
     void loginTest() {
 

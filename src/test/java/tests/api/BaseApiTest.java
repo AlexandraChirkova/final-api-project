@@ -5,11 +5,13 @@ import io.restassured.RestAssured;
 import models.LoginResponse;
 import models.UserCredentials;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpec;
 import static specs.Specs.responseSpec;
 
+@Tag("api")
 public class BaseApiTest {
 
     @BeforeAll

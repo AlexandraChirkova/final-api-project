@@ -2,16 +2,17 @@ package tests.api;
 
 import api.BookApi;
 
-import extension.WithLogin;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import models.BooksListResponse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("api")
 public class AddBookApiTest extends BaseApiTest {
 
     @Test

@@ -5,6 +5,7 @@ import extension.AuthData;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecAuth;
 
+@Tag("api")
 public class DeleteBookApiTest extends BaseApiTest{
 
     @Test
