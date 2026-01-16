@@ -4,6 +4,8 @@ import api.BookApi;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import models.BooksListResponse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,6 +15,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("api")
+@Epic("Book Store")
+@Feature("Добавление книги")
 public class AddBookApiTest extends BaseApiTest {
 
     @Test

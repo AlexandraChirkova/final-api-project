@@ -2,6 +2,8 @@ package tests.api;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import models.LoginResponse;
 import models.UserCredentials;
 import org.junit.jupiter.api.DisplayName;
@@ -14,6 +16,8 @@ import static specs.Specs.requestSpec;
 import static specs.Specs.responseSpec;
 
 @Tag("api")
+@Epic("Book Store")
+@Feature("Логин")
 public class LoginApiTest extends BaseApiTest{
 
     @Test

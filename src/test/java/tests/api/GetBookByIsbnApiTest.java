@@ -2,6 +2,8 @@ package tests.api;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import models.BookDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -14,6 +16,8 @@ import static specs.Specs.requestSpec;
 import static specs.Specs.responseSpec;
 
 @Tag("api")
+@Epic("Book Store")
+@Feature("Получение книги")
 public class GetBookByIsbnApiTest extends BaseApiTest {
 
     private static final String ISBN = "9781449325862";

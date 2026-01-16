@@ -4,6 +4,8 @@ import api.BookApi;
 import extension.AuthData;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,8 @@ import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecAuth;
 
 @Tag("api")
+@Epic("Book Store")
+@Feature("Удаление книги")
 public class DeleteBookApiTest extends BaseApiTest{
 
     @Test
