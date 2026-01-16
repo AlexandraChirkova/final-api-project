@@ -114,6 +114,7 @@ gradle clean test \
 <img src="images/screenshots/Jenkins.png"/>
 </p>
 
+---
 ### Allure TestOps
 
 Результаты тестов автоматически отправляются в [Allure TestOps](https://allure.autotests.cloud/project/5081/dashboards)
@@ -122,9 +123,8 @@ gradle clean test \
 <img src="images/screenshots/AllureTestOps.png"/>
 </p>
 
-## Уведомление в Telegram при помощи бота
+### Уведомление в Telegram при помощи бота
 
----
 <p align="center">
 <img src="images/screenshots/telegram.png" />
 </p>
