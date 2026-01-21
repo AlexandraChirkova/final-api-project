@@ -1,5 +1,6 @@
 package tests.api;
 
+import config.ConfigFactoryProvider;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -26,8 +27,8 @@ public class LoginApiTest extends BaseApiTest{
     void loginTest() {
 
         UserCredentials creds = new UserCredentials();
-        creds.setUserName("admin");
-        creds.setPassword("5qA!H6mY8C@ck7x");
+        creds.setUserName(ConfigFactoryProvider.auth().login());
+        creds.setPassword(ConfigFactoryProvider.auth().password());
         LoginResponse response = Allure.step(
                 "Отправляем POST запрос на логин",
                 () -> given()

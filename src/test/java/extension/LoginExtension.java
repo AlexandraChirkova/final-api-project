@@ -1,6 +1,7 @@
 package extension;
 
 import com.codeborne.selenide.WebDriverRunner;
+import config.ConfigFactoryProvider;
 import models.LoginResponse;
 import models.UserCredentials;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
@@ -12,14 +13,15 @@ import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpec;
 import static specs.Specs.responseSpec;
 
+
 public class LoginExtension implements BeforeEachCallback {
 
     @Override
     public void beforeEach(ExtensionContext context) throws Exception {
 
         UserCredentials creds = new UserCredentials();
-        creds.setUserName("admin");
-        creds.setPassword("5qA!H6mY8C@ck7x");
+        creds.setUserName(ConfigFactoryProvider.auth().login());
+        creds.setPassword(ConfigFactoryProvider.auth().password());
 
         LoginResponse loginResponse =
                 given(requestSpec)

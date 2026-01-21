@@ -1,5 +1,6 @@
 package tests.api;
 
+import config.ConfigFactoryProvider;
 import extension.AuthData;
 import io.restassured.RestAssured;
 import models.LoginResponse;
@@ -19,8 +20,8 @@ public class BaseApiTest {
         RestAssured.baseURI = "https://demoqa.com";
 
         UserCredentials creds = new UserCredentials();
-        creds.setUserName("admin");
-        creds.setPassword("5qA!H6mY8C@ck7x");
+        creds.setUserName(ConfigFactoryProvider.auth().login());
+        creds.setPassword(ConfigFactoryProvider.auth().password());
 
         LoginResponse response =
                 given()
