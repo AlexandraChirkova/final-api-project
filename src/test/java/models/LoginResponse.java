@@ -10,7 +10,8 @@ public class LoginResponse {
     private String password;
     private String token;
     private String expires;
-    private String created_date;
+    @JsonProperty("created_date")
+    private String createdDate;
 
     @JsonProperty("isActive")
     private boolean isActive;

@@ -14,13 +14,14 @@ public class ProfilePage {
     public final SelenideElement userNameLabel = $(".col-md-5 > #userName-label");
     public final SelenideElement booksLink = $(".mr-2 > a");
     public final SelenideElement deleteBooks = $(".di > #submit");
+    public final SelenideElement loadingElement =  $(".loading");
     private ElementsCollection bookRows = $$(".rt-tbody .rt-tr-group");
 
 
     @Step("Открыть страницу профайла")
     public ProfilePage openPage() {
         open("/profile");
-        $(".loading").should(disappear);
+        loadingElement.should(disappear);
         userNameLabel.shouldBe(visible);
         return this;
     }
