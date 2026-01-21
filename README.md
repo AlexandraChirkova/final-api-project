@@ -3,6 +3,8 @@
 Автоматизированный тестовый проект для сайта  
 👉 https://demoqa.com/books
 
+<img src="images/logo/demoqa.jpeg" alt="demoqa.com" height="200" width="600" style="position: relative; top: 6px; margin-left: 6px;"></a>
+
 Проект включает **API** и **Web** автотесты и настроен для запуска локально и через **Jenkins** с публикацией отчётов в **Allure** и **Allure TestOps**.
 
 ---
@@ -102,7 +104,7 @@ gradle clean test \
 
 ## Отчеты
 
-### Allure Report (Jenkins)
+### [Allure Report](https://jenkins.autotests.cloud/job/38-alexandrachirkova-final-project-api/allure/) ([Jenkins](https://jenkins.autotests.cloud/job/38-alexandrachirkova-final-project-api/))
 
 После выполнения тестов формируется HTML-отчёт Allure, доступный из [Jenkins](https://jenkins.autotests.cloud/job/38-alexandrachirkova-final-project-api/).
 
@@ -115,7 +117,7 @@ gradle clean test \
 </p>
 
 ---
-### Allure TestOps
+### [Allure TestOps](https://allure.autotests.cloud/project/5081/dashboards)
 
 Результаты тестов автоматически отправляются в [Allure TestOps](https://allure.autotests.cloud/project/5081/dashboards)
 
@@ -126,7 +128,7 @@ gradle clean test \
 ### Уведомление в Telegram при помощи бота
 
 <p align="center">
-<img src="images/screenshots/telegram.png" />
+<img src="images/screenshots/telegram.png" width="400" />
 </p>
 
 ---
