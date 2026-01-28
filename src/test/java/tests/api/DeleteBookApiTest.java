@@ -26,7 +26,7 @@ public class DeleteBookApiTest extends BaseApiTest{
     void deleteBookTest() {
 
         Allure.step("Предусловие: добавляем книгу", () -> {
-            BookApi.addBook("9781449325862");
+            BookApi.addBook(AuthData.userId,"9781449325862");
         });
 
         Allure.step("Отправляем DELETE запрос на удаление книги", () ->

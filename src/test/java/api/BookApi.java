@@ -6,6 +6,7 @@ import models.AddBooksRequest;
 import models.Isbn;
 
 import java.util.Collections;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecAuth;
@@ -13,43 +14,51 @@ import static specs.Specs.responseSpec;
 
 public class BookApi {
 
-    public static void deleteAllBooks() {
+    private static final String BOOKS_PATH = "/BookStore/v1/Books";
+    private static final String BOOK_PATH = "/BookStore/v1/Book";
+    private static final String USER_ID_PARAM = "UserId";
+
+    public static void deleteAllBooks(String userId) {
         given()
                 .spec(requestSpecAuth(AuthData.token))
-                .delete("/BookStore/v1/Books?UserId=" + AuthData.userId)
+                .queryParam(USER_ID_PARAM, userId)
+                .when()
+                .delete(BOOKS_PATH)
                 .then()
                 .statusCode(204);
     }
 
-    public static Response addBook(String isbn) {
+    public static Response addBook(String userId, String isbn) {
         AddBooksRequest body = new AddBooksRequest();
-        body.setUserId(AuthData.userId);
+        body.setUserId(userId);
 
         Isbn one = new Isbn();
         one.setIsbn(isbn);
 
         body.setCollectionOfIsbns(Collections.singletonList(one));
 
-        return given(requestSpecAuth(AuthData.token))
+        return given()
+                .spec(requestSpecAuth(AuthData.token))
                 .body(body)
-                .post("/BookStore/v1/Books")
+                .when()
+                .post(BOOKS_PATH)
                 .then()
                 .spec(responseSpec(201))
-                .extract().response();
+                .extract()
+                .response();
     }
 
-    public static void deleteBook(String isbn) {
+    public static void deleteBook(String userId, String isbn) {
         given()
                 .spec(requestSpecAuth(AuthData.token))
-                .body(
-                        java.util.Map.of(
-                                "userId", AuthData.userId,
-                                "isbn", isbn
-                        )
-                )
+                .body(Map.of(
+                        "userId", userId,
+                        "isbn", isbn
+                ))
                 .when()
-                .delete("/BookStore/v1/Book")
+                .delete(BOOK_PATH)
                 .then()
                 .statusCode(204);
     }
 }
+

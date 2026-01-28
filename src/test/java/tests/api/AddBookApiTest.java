@@ -2,6 +2,7 @@ package tests.api;
 
 import api.BookApi;
 
+import extension.AuthData;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -26,7 +27,7 @@ public class AddBookApiTest extends BaseApiTest {
 
         BooksListResponse response = Allure.step(
                 "Отправляем POST запрос на добавление книги",
-                () -> BookApi.addBook("9781449325862")
+                () -> BookApi.addBook(AuthData.userId,"9781449325862")
                         .as(BooksListResponse.class)
         );
 
@@ -45,7 +46,7 @@ public class AddBookApiTest extends BaseApiTest {
     @AfterEach
     void cleanUp() {
         Allure.step("Очистка данных: удаляем добавленную книгу", () -> {
-            BookApi.deleteBook("9781449325862");
+            BookApi.deleteBook(AuthData.userId,"9781449325862");
         });
     }
 

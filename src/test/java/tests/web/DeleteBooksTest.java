@@ -1,6 +1,7 @@
 package tests.web;
 
 import api.BookApi;
+import extension.AuthData;
 import extension.WithLogin;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
@@ -22,8 +23,8 @@ public class DeleteBooksTest extends BaseTest {
     @DisplayName("Удалить книги")
     void deleteBooksSuccessTest() {
 
-        BookApi.deleteAllBooks();
-        BookApi.addBook("9781491904244");
+        BookApi.deleteAllBooks(AuthData.userId);
+        BookApi.addBook(AuthData.userId,"9781491904244");
 
         profilePage.openPage()
                 .checkUrl()
